@@ -25,7 +25,7 @@
             "   - <body>中必须以<h1>标题开头，标题格式与<title>一致",
             "   - 禁止使用<header>标签或重复<h1>标题",
             "   - 正文应直接以摘要<p>或首个<h2>开头",
-            "   - 避免使用复杂的嵌套结构，保持HTML简洁"
+            "   - 避免使用复杂的嵌套结构，保持HTML简洁",
             "7) 使用inline CSS优化排版，参考以下样式：",
             "   body { font-family: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 100%; margin: 0 auto; padding: 10px; background-color: #fff; }",
             "   h1 { font-size: 1.5em; font-weight: bold; color: #333; text-align: center; margin: 20px 0; }",
@@ -66,7 +66,7 @@
             "   - <head>中必须包含<style>标签，内联CSS样式参考第9条要求",
             "   - <body>必须以<h1>标题开头，标题格式与<title>一致",
             "   - 禁止使用<header>标签或重复<h1>标题",
-            "   - 避免使用复杂的嵌套结构，保持HTML简洁"
+            "   - 避免使用复杂的嵌套结构，保持HTML简洁",
             "9) 使用inline CSS优化排版，参考以下样式：",
             "   body { font-family: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Helvetica Neue\", Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 100%; margin: 0 auto; padding: 10px; background-color: #fff; }",
             "   h1 { font-size: 1.5em; font-weight: bold; color: #333; text-align: center; margin: 20px 0; }",
