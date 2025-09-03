@@ -81,7 +81,15 @@ for logical_name, item in content_config.all_items():
         result = reporter.generate_report(logical_name, found_file, html_path)
         if not result or (isinstance(result, str) and result.strip().lower().startswith("error")):
             logging.error(f"Failed to generate HTML for '{logical_name}' using {found_file}")
+            logging.error(f"AI tool response: {result}")
             sys.exit(1)
+        
+        # Check if the HTML file was actually created
+        if not os.path.exists(html_path):
+            logging.error(f"AI tool claimed success but HTML file was not created: {html_path}")
+            logging.error(f"AI tool response: {result}")
+            sys.exit(1)
+            
         logging.info(f"Generated HTML file: {html_path}")
     except Exception as e:
         logging.error(f"Exception during report generation for '{logical_name}': {e}")

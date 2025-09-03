@@ -62,11 +62,14 @@ class AIReporter:
                 cmd += ["--proxy", f"http://{proxy_host}:{proxy_port}"]
             cmd += ["--yolo", "-p", f"{prompt_text}"]
 
+            logging.info(f"Running AI tool command: {' '.join(cmd)}")
             result = subprocess.run(cmd, capture_output=True, text=True, env=env_with_node)
             if result.returncode != 0:
-                msg = f"Error: AI tool command failed (return code: {result.returncode})\n{result.stderr}"
+                msg = f"Error: AI tool command failed (return code: {result.returncode})\nSTDERR: {result.stderr}\nSTDOUT: {result.stdout}"
                 logging.error(msg)
                 return msg
+            
+            logging.info(f"AI tool response: {result.stdout}")
             return result.stdout
 
         except subprocess.CalledProcessError as e:
