@@ -58,12 +58,16 @@ class AIReporter:
             env_with_node["PATH"] = f"{nvm_bin_path}:{env_with_node['PATH']}"
 
             cmd = [tool]
-            if use_proxy:
-                cmd += ["--proxy", f"http://{proxy_host}:{proxy_port}"]
             cmd += ["--yolo", "-p", f"{prompt_text}"]
 
+            # Set up proxy environment variable if needed
+            env_for_subprocess = env_with_node.copy()
+            if use_proxy:
+                env_for_subprocess["HTTPS_PROXY"] = f"http://{proxy_host}:{proxy_port}"
+                env_for_subprocess["HTTP_PROXY"] = f"http://{proxy_host}:{proxy_port}"
+
             logging.info(f"Running AI tool command: {' '.join(cmd)}")
-            result = subprocess.run(cmd, capture_output=True, text=True, env=env_with_node)
+            result = subprocess.run(cmd, capture_output=True, text=True, env=env_for_subprocess)
             if result.returncode != 0:
                 msg = f"Error: AI tool command failed (return code: {result.returncode})\nSTDERR: {result.stderr}\nSTDOUT: {result.stdout}"
                 logging.error(msg)

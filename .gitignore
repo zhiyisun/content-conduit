@@ -1,6 +1,8 @@
 # Ignore all files in content/html and content/rss, but keep folders tracked
 content/html/*
 !content/html/.gitkeep
+# Specifically ignore the wechat subdirectory
+content/html/wechat/
 
 content/rss/*
 !content/rss/.gitkeep

@@ -119,9 +119,14 @@ Set required variables in your shell or `.env` file before running the project.
 ### config.json
 - `RSS_URL`: RSS source URL
 - `TOOL`: LLM tool to use (e.g., "qwen", "gemini")
-- `USE_PROXY`: Whether to use a proxy for requests
-- `PROXY_HOST`: Proxy host address
-- `PROXY_PORT`: Proxy port
+- `USE_PROXY`: Whether to use a proxy for requests (for backward compatibility, now uses environment variables)
+- `PROXY_HOST`: Proxy host address (for backward compatibility, now uses environment variables)
+- `PROXY_PORT`: Proxy port (for backward compatibility, now uses environment variables)
+
+### Environment Variables for Proxy
+When using Gemini with newer versions, proxy settings are now configured via environment variables:
+- `HTTPS_PROXY`: HTTPS proxy URL (e.g., `http://proxy_host:proxy_port`)
+- `HTTP_PROXY`: HTTP proxy URL (e.g., `http://proxy_host:proxy_port`)
 
 ### content_map.json
 Defines content generation rules and prompts for each platform:
