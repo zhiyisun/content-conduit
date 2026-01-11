@@ -1,8 +1,8 @@
 {
     
     "RSS_URL": "https://news.smol.ai/rss.xml",
-    "TOOL": "qwen",
-    "USE_PROXY": false,
+    "TOOL": "gemini",
+    "USE_PROXY": true,
     "PROXY_HOST": "raspberrypi.local",
     "PROXY_PORT": 7893
 }
