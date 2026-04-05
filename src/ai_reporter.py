@@ -58,7 +58,8 @@ class AIReporter:
             env_with_node["PATH"] = f"{nvm_bin_path}:{env_with_node['PATH']}"
 
             cmd = [tool]
-            cmd += ["--yolo", "-m", "gemini-2.5-flash-lite", "-p", f"{prompt_text}"]
+            #cmd += ["--yolo", "-m", "gemini-2.5-flash-lite", "-p", f"{prompt_text}"]
+            cmd += ["--yolo", "-m", "gemini-2.5-flash", "-p", f"{prompt_text}"]
 
             # Set up proxy environment variable if needed
             env_for_subprocess = env_with_node.copy()
